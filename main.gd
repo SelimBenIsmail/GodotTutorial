@@ -43,5 +43,6 @@ func _on_mob_timer_timeout():
 	mob.position = mob_spawn_location.position
 	var velocity = Vector2(randf_range(150.0, 250.0),0.0)
 	mob.linear_velocity = velocity.rotated(direction)
+	mob.get_node("AnimatedSprite2D").flip_h = mob.linear_velocity.x < 0
 	
 	add_child(mob)
